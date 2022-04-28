@@ -30,7 +30,6 @@ public class CharCountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
         // 단어 빈도수 구현은 단어가 아닌 것을 기준으로 단어로 구분한다.
         // 분석할 한 줄 내용을 단어가 아닌 것으로 나눈다.
         // word 변수는 단어가 저장된다.
-
         for (String word : line.split("\\W+")) {
 
             // word의 글자가 3글자 이상인 단어만 빈도수 세기
