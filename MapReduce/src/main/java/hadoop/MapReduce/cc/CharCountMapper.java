@@ -26,6 +26,7 @@ public class CharCountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
 
         // 분석할 파일의 한 줄 값
         String line = value.toString();
+        //String aa = "^([0-9][0-9][0-9] | [0-9][0-9][0-9] | [0-9][0-9][0-9] | [0-9][0-9][0-9])$";
 
         // 단어 빈도수 구현은 단어가 아닌 것을 기준으로 단어로 구분한다.
         // 분석할 한 줄 내용을 단어가 아닌 것으로 나눈다.
