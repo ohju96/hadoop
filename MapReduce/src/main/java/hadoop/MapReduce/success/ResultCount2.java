@@ -33,7 +33,6 @@ public class ResultCount2 extends Configuration implements Tool {
     @Override
     public void setConf(Configuration conf) {
         conf.set("AppName", "Send Result2");
-
     }
 
     @Override
@@ -49,9 +48,14 @@ public class ResultCount2 extends Configuration implements Tool {
     @Override
     public int run(String[] args) throws Exception {
 
+        // 설정 값 가져오기
         Configuration conf = this.getConf();
-        String appName = conf.get("AppName");
 
+        // 전송 결과 코드값설정
+        conf.set("resultCode", args[2]);
+
+        // 잡 이름 가져오기
+        String appName = conf.get("AppName");
         log.info("appName : " + appName);
 
         // 맵리듀스 시랳ㅇ을 위한 잡 객체를 가져온다.

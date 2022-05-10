@@ -1,4 +1,4 @@
-package hadoop.MapReduce.ip;
+package hadoop.MapReduce.combiner;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
@@ -7,7 +7,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class IPCountMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+public class IPCount2Mapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 
     @Override
     protected void map(LongWritable key, Text value, Context context)
@@ -19,6 +19,11 @@ public class IPCountMapper extends Mapper<LongWritable, Text, Text, IntWritable>
         String ip = "";
         int forCnt = 0;
 
+        /**
+         *단어 빈도수 구현은 단어가 아닌 것을 기준으로 단어로 구분한다.
+         * 분석할 한 줄 내용을 단어가 아닌 것으로 나눈다.
+         * Word 변수는 단어가 저장된다.
+         */
 
         for (String word : line.split("\\W+")) {
 
