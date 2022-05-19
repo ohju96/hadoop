@@ -6,7 +6,6 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
-import java.util.Locale;
 
 public class ImageCountMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 
